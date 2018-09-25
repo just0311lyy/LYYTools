@@ -1,0 +1,88 @@
+//
+//  PrefixHeader.pch
+//  LYYTools
+//
+//  Created by 李阳洋 on 2018/8/6.
+//  Copyright © 2018年 lyy. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import <AFNetworking.h>
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+
+
+//单例类 arc 或者 mrc
+//.h文件
+#define singleH(name) +(instancetype)share##name;
+#if __has_feature(objc_arc)
+//.m文件
+#define singleM(name) static id _instance;\
++(instancetype)allocWithZone:(struct _NSZone *)zone\
+{\
+    static dispatch_once_t onceToken;\
+    dispatch_once(&onceToken, ^{\
+        _instance = [super allocWithZone:zone];\
+    });\
+    return _instance;\
+}\
+\
++(instancetype)share##name\
+{\
+    return [[self alloc]init];\
+}\
+-(id)copyWithZone:(NSZone *)zone\
+{\
+    return _instance;\
+}\
+\
+-(id)mutableCopyWithZone:(NSZone *)zone\
+{\
+    return _instance;\
+}
+#else
+#define singleM static id _instance;\
++(instancetype)allocWithZone:(struct _NSZone *)zone\
+{\
+    static dispatch_once_t onceToken;\
+    dispatch_once(&onceToken, ^{\
+        _instance = [super allocWithZone:zone];\
+    });\
+    return _instance;\
+}\
+\
++(instancetype)shareTools\
+{\
+    return [[self alloc]init];\
+}\
+-(id)copyWithZone:(NSZone *)zone\
+{\
+    return _instance;\
+}\
+-(id)mutableCopyWithZone:(NSZone *)zone\
+{\
+    return _instance;\
+}\
+-(oneway void)release\
+{\
+}\
+\
+-(instancetype)retain\
+{\
+    return _instance;\
+}\
+\
+-(NSUInteger)retainCount\
+{\
+    return MAXFLOAT;\
+}
+#endif
+
+
+#endif /* PrefixHeader_pch */
