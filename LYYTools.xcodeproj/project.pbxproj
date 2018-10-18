@@ -17,6 +17,8 @@
 		7D3BBF272113255E0040E37F /* LYYToolsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3BBF262113255E0040E37F /* LYYToolsTests.m */; };
 		7D3BBF322113255E0040E37F /* LYYToolsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3BBF312113255E0040E37F /* LYYToolsUITests.m */; };
 		7D3BBF442113266F0040E37F /* LYYHTTPSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3BBF432113266F0040E37F /* LYYHTTPSManager.m */; };
+		7D5B76052178461000E81EE2 /* LYYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B76042178461000E81EE2 /* LYYBaseViewController.m */; };
+		7D5B760821784B3200E81EE2 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B760721784B3200E81EE2 /* UIImage+Category.m */; };
 		7DF2EA58211336F400575713 /* FSCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF2EA56211336F400575713 /* FSCustomButton.m */; };
 		7DF2EA59211336F400575713 /* CALayer+FSUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF2EA57211336F400575713 /* CALayer+FSUI.m */; };
 		7DF2EA5D2113377700575713 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF2EA5C2113377700575713 /* NSString+Category.m */; };
@@ -61,6 +63,10 @@
 		7D3BBF332113255E0040E37F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D3BBF422113266F0040E37F /* LYYHTTPSManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYYHTTPSManager.h; sourceTree = "<group>"; };
 		7D3BBF432113266F0040E37F /* LYYHTTPSManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYYHTTPSManager.m; sourceTree = "<group>"; };
+		7D5B76032178461000E81EE2 /* LYYBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYYBaseViewController.h; sourceTree = "<group>"; };
+		7D5B76042178461000E81EE2 /* LYYBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYYBaseViewController.m; sourceTree = "<group>"; };
+		7D5B760621784B3200E81EE2 /* UIImage+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
+		7D5B760721784B3200E81EE2 /* UIImage+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		7DF2EA53211336F400575713 /* FSCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomButton.h; sourceTree = "<group>"; };
 		7DF2EA54211336F400575713 /* CALayer+FSUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FSUI.h"; sourceTree = "<group>"; };
 		7DF2EA55211336F400575713 /* FSCommenDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCommenDefine.h; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 			children = (
 				7D3BBF0D2113255A0040E37F /* AppDelegate.h */,
 				7D3BBF0E2113255A0040E37F /* AppDelegate.m */,
+				7D5B76032178461000E81EE2 /* LYYBaseViewController.h */,
+				7D5B76042178461000E81EE2 /* LYYBaseViewController.m */,
 				7D3BBF102113255A0040E37F /* ViewController.h */,
 				7D3BBF112113255A0040E37F /* ViewController.m */,
 				7DF2EA5A2113373600575713 /* Categories */,
@@ -212,6 +220,8 @@
 			children = (
 				7DF2EA5B2113377700575713 /* NSString+Category.h */,
 				7DF2EA5C2113377700575713 /* NSString+Category.m */,
+				7D5B760621784B3200E81EE2 /* UIImage+Category.h */,
+				7D5B760721784B3200E81EE2 /* UIImage+Category.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -425,6 +435,8 @@
 				7DF2EA58211336F400575713 /* FSCustomButton.m in Sources */,
 				7D3BBF1D2113255E0040E37F /* main.m in Sources */,
 				7D3BBF0F2113255A0040E37F /* AppDelegate.m in Sources */,
+				7D5B76052178461000E81EE2 /* LYYBaseViewController.m in Sources */,
+				7D5B760821784B3200E81EE2 /* UIImage+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
