@@ -9,16 +9,16 @@
 #import "LYYLazyLoadTableViewController.h"
 
 @interface LYYLazyLoadTableViewController ()
-@property(nonatomic,strong) NSArray *groups;
+@property(nonatomic,strong) NSArray *groups; //在类中声明了一个属性
 @end
 
 @implementation LYYLazyLoadTableViewController
 
--(NSArray *)groups{
-    if (!_groups) {
-        _groups = @[@"cell01",@"cell02",@"cell03",@"cell04",@"cell05",@"cell06",@"cell07"];
+-(NSArray *)groups{  //重写groups的getter方法
+    if (!_groups) {  //不能用self.groups,是因为!_groups是个getter方法，若用getter访问会造成死循环
+        _groups = @[@"cell01",@"cell02",@"cell03",@"cell04",@"cell05",@"cell06",@"cell07"];  //可以用self.groups访问，这是个setter方法
     }
-    return _groups;
+    return _groups;  //不能用self.groups,是因为!_groups是个getter方法，若用getter访问会造成死循环
 }
 
 - (void)viewDidLoad {
