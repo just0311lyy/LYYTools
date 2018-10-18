@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "LYYHTTPSManager.h"
 @interface ViewController ()
 
 @end
