@@ -18,12 +18,14 @@
 		7D3BBF322113255E0040E37F /* LYYToolsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3BBF312113255E0040E37F /* LYYToolsUITests.m */; };
 		7D3BBF442113266F0040E37F /* LYYHTTPSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3BBF432113266F0040E37F /* LYYHTTPSManager.m */; };
 		7D5B76052178461000E81EE2 /* LYYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B76042178461000E81EE2 /* LYYBaseViewController.m */; };
-		7D5B760821784B3200E81EE2 /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B760721784B3200E81EE2 /* UIImage+Category.m */; };
 		7D5B761E2178AD1F00E81EE2 /* LYYLazyLoadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5B761D2178AD1F00E81EE2 /* LYYLazyLoadTableViewController.m */; };
 		7DF2EA58211336F400575713 /* FSCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF2EA56211336F400575713 /* FSCustomButton.m */; };
 		7DF2EA59211336F400575713 /* CALayer+FSUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF2EA57211336F400575713 /* CALayer+FSUI.m */; };
-		7DF2EA5D2113377700575713 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF2EA5C2113377700575713 /* NSString+Category.m */; };
 		7DF2EA64211960EE00575713 /* LYYSingles.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF2EA63211960EE00575713 /* LYYSingles.m */; };
+		D728CDEC221CF8F800C0EED0 /* UIColor+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDEB221CF8F800C0EED0 /* UIColor+YylCategory.m */; };
+		D728CDEF221CFACD00C0EED0 /* UILabel+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDEE221CFACD00C0EED0 /* UILabel+YylCategory.m */; };
+		D728CDF2221CFC0500C0EED0 /* UIImage+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDF1221CFC0500C0EED0 /* UIImage+YylCategory.m */; };
+		D728CDF5221CFCB200C0EED0 /* NSString+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +68,6 @@
 		7D3BBF432113266F0040E37F /* LYYHTTPSManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYYHTTPSManager.m; sourceTree = "<group>"; };
 		7D5B76032178461000E81EE2 /* LYYBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYYBaseViewController.h; sourceTree = "<group>"; };
 		7D5B76042178461000E81EE2 /* LYYBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYYBaseViewController.m; sourceTree = "<group>"; };
-		7D5B760621784B3200E81EE2 /* UIImage+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
-		7D5B760721784B3200E81EE2 /* UIImage+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
 		7D5B761C2178AD1F00E81EE2 /* LYYLazyLoadTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYYLazyLoadTableViewController.h; sourceTree = "<group>"; };
 		7D5B761D2178AD1F00E81EE2 /* LYYLazyLoadTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYYLazyLoadTableViewController.m; sourceTree = "<group>"; };
 		7DF2EA53211336F400575713 /* FSCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomButton.h; sourceTree = "<group>"; };
@@ -75,12 +75,18 @@
 		7DF2EA55211336F400575713 /* FSCommenDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCommenDefine.h; sourceTree = "<group>"; };
 		7DF2EA56211336F400575713 /* FSCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomButton.m; sourceTree = "<group>"; };
 		7DF2EA57211336F400575713 /* CALayer+FSUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FSUI.m"; sourceTree = "<group>"; };
-		7DF2EA5B2113377700575713 /* NSString+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
-		7DF2EA5C2113377700575713 /* NSString+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
 		7DF2EA5E2118386800575713 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7DF2EA62211960EE00575713 /* LYYSingles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYYSingles.h; sourceTree = "<group>"; };
 		7DF2EA63211960EE00575713 /* LYYSingles.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYYSingles.m; sourceTree = "<group>"; };
 		A630336ACEA554D7651E0E79 /* libPods-LYYTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYYTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D728CDEA221CF8F800C0EED0 /* UIColor+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+YylCategory.h"; sourceTree = "<group>"; };
+		D728CDEB221CF8F800C0EED0 /* UIColor+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YylCategory.m"; sourceTree = "<group>"; };
+		D728CDED221CFACD00C0EED0 /* UILabel+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+YylCategory.h"; sourceTree = "<group>"; };
+		D728CDEE221CFACD00C0EED0 /* UILabel+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YylCategory.m"; sourceTree = "<group>"; };
+		D728CDF0221CFC0500C0EED0 /* UIImage+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+YylCategory.h"; sourceTree = "<group>"; };
+		D728CDF1221CFC0500C0EED0 /* UIImage+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YylCategory.m"; sourceTree = "<group>"; };
+		D728CDF3221CFCB200C0EED0 /* NSString+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YylCategory.h"; sourceTree = "<group>"; };
+		D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YylCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,10 +237,14 @@
 		7DF2EA5A2113373600575713 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				7DF2EA5B2113377700575713 /* NSString+Category.h */,
-				7DF2EA5C2113377700575713 /* NSString+Category.m */,
-				7D5B760621784B3200E81EE2 /* UIImage+Category.h */,
-				7D5B760721784B3200E81EE2 /* UIImage+Category.m */,
+				D728CDF3221CFCB200C0EED0 /* NSString+YylCategory.h */,
+				D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */,
+				D728CDF0221CFC0500C0EED0 /* UIImage+YylCategory.h */,
+				D728CDF1221CFC0500C0EED0 /* UIImage+YylCategory.m */,
+				D728CDEA221CF8F800C0EED0 /* UIColor+YylCategory.h */,
+				D728CDEB221CF8F800C0EED0 /* UIColor+YylCategory.m */,
+				D728CDED221CFACD00C0EED0 /* UILabel+YylCategory.h */,
+				D728CDEE221CFACD00C0EED0 /* UILabel+YylCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -441,16 +451,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D5B761E2178AD1F00E81EE2 /* LYYLazyLoadTableViewController.m in Sources */,
-				7DF2EA5D2113377700575713 /* NSString+Category.m in Sources */,
 				7DF2EA59211336F400575713 /* CALayer+FSUI.m in Sources */,
+				D728CDEF221CFACD00C0EED0 /* UILabel+YylCategory.m in Sources */,
+				D728CDF5221CFCB200C0EED0 /* NSString+YylCategory.m in Sources */,
 				7DF2EA64211960EE00575713 /* LYYSingles.m in Sources */,
 				7D3BBF442113266F0040E37F /* LYYHTTPSManager.m in Sources */,
 				7D3BBF122113255A0040E37F /* ViewController.m in Sources */,
 				7DF2EA58211336F400575713 /* FSCustomButton.m in Sources */,
+				D728CDF2221CFC0500C0EED0 /* UIImage+YylCategory.m in Sources */,
 				7D3BBF1D2113255E0040E37F /* main.m in Sources */,
+				D728CDEC221CF8F800C0EED0 /* UIColor+YylCategory.m in Sources */,
 				7D3BBF0F2113255A0040E37F /* AppDelegate.m in Sources */,
 				7D5B76052178461000E81EE2 /* LYYBaseViewController.m in Sources */,
-				7D5B760821784B3200E81EE2 /* UIImage+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
