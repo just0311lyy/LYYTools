@@ -23,25 +23,25 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 #pragma mark - ***** Decomposing Dates 具体时间 *****
-- (NSInteger)cmb_year
+- (NSInteger)yyl_year
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.year;
 }
 
-- (NSInteger)cmb_month
+- (NSInteger)yyl_month
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.month;
 }
 
-- (NSInteger)cmb_day
+- (NSInteger)yyl_day
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.day;
 }
 
-- (NSInteger)cmb_hour
+- (NSInteger)yyl_hour
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.hour;
@@ -51,7 +51,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
  最近的整点小时，例如 2:42 pm  则返回 15
  @return 整点
  */
-- (NSInteger)cmb_nearestHour
+- (NSInteger)yyl_nearestHour
 {
     NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + S_MINUTE * 30;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
@@ -59,27 +59,27 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return components.hour;
 }
 
-- (NSInteger)cmb_minute
+- (NSInteger)yyl_minute
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.minute;
 }
 
-- (NSInteger)cmb_second
+- (NSInteger)yyl_second
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.second;
 }
 
 //纳秒单位
-- (NSInteger)cmb_nanosecond
+- (NSInteger)yyl_nanosecond
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.nanosecond;
 }
 
 //    Sunday:1, Monday:2, Tuesday:3, Wednesday:4, Friday:5, Saturday:6
-- (NSInteger)cmb_weekday
+- (NSInteger)yyl_weekday
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.weekday;
@@ -89,80 +89,80 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
  以7天为单位，范围为1-5 例1-7号为第1个7天，8-14号为第2个7天...）
  @return 第几个七天
  */
-- (NSInteger)cmb_weekdayOrdinal
+- (NSInteger)yyl_weekdayOrdinal
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.weekdayOrdinal;
 }
 
 //该月第几周
-- (NSInteger)cmb_weekOfMonth
+- (NSInteger)yyl_weekOfMonth
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.weekOfMonth;
 }
 
 //该年第几周 苹果官方不推荐使用week 即不推荐components.week写法
-- (NSInteger)cmb_weekOfYear{
+- (NSInteger)yyl_weekOfYear{
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.weekOfYear;
 }
 
-- (NSInteger)cmb_yearForWeekOfYear {
+- (NSInteger)yyl_yearForWeekOfYear {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.yearForWeekOfYear;
 }
 
 //第几季度
-- (NSInteger)cmb_quarter
+- (NSInteger)yyl_quarter
 {
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     return components.quarter;
 }
 
 // 是否是闰月
-- (BOOL)cmb_isLeapMonth
+- (BOOL)yyl_isLeapMonth
 {
     return [[[NSCalendar currentCalendar] components:NSCalendarUnitQuarter fromDate:self] isLeapMonth];
 }
 
 // 是否是闰年
-- (BOOL)cmb_isLeapYear
+- (BOOL)yyl_isLeapYear
 {
-    NSUInteger year = self.cmb_year;
+    NSUInteger year = self.yyl_year;
     return ((year % 400 == 0) || ((year % 100 != 0) && (year % 4 == 0)));
 }
 
-- (BOOL)cmb_isToday
+- (BOOL)yyl_isToday
 {
     //    return [self isEqualToDateIgnoringTime:[NSDate date]];   //方案一：直接使用日期的比较
     //方案二：fabs处理double类型的 取绝对值
     if (fabs(self.timeIntervalSinceNow) >= 60 * 60 * 24) return NO;
-    return [NSDate new].cmb_day == self.cmb_day;
+    return [NSDate new].yyl_day == self.yyl_day;
 }
 
-- (BOOL)cmb_isYesterday
+- (BOOL)yyl_isYesterday
 {
     //方案一：直接使用日期的比较
-    //    return [self isEqualToDateIgnoringTime:[NSDate cmb_dateYesterday]];
+    //    return [self isEqualToDateIgnoringTime:[NSDate yyl_dateYesterday]];
     //方案二：
-    NSDate *added = [self cmb_dateByAddingDays:1];
-    return [added cmb_isToday];
+    NSDate *added = [self yyl_dateByAddingDays:1];
+    return [added yyl_isToday];
 }
 
-- (NSDate*)cmb_yesterday
+- (NSDate*)yyl_yesterday
 {
     NSDateComponents *c = [[NSDateComponents alloc] init];
     c.day = -1;
     return [[NSCalendar currentCalendar] dateByAddingComponents:c toDate:self options:0];
 }
 
-- (BOOL)cmb_isTomorrow{
-    return [self cmb_isSameDay:[NSDate cmb_dateTomorrow]];
+- (BOOL)yyl_isTomorrow{
+    return [self yyl_isSameDay:[NSDate yyl_dateTomorrow]];
 }
 
 #pragma mark - ***** String Properties 短字符串工具 时间日期格式设置 *****
-- (NSString *)cmb_stringWithFormat:(NSString *)format{
+- (NSString *)yyl_stringWithFormat:(NSString *)format{
     NSDateFormatter *formatter = [NSDateFormatter new];
     //    formatter.locale = [NSLocale currentLocale]; // Necessary?
     formatter.dateFormat = format;
@@ -170,7 +170,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //时间字符串格式设置
-- (NSString *)cmb_stringWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle{
+- (NSString *)yyl_stringWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle{
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateStyle = dateStyle;
     formatter.timeStyle = timeStyle;
@@ -180,52 +180,52 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 
 //2019年2月13日 下午4：01分
 //示例： 2/13/19 4:01 PM   （月/日/年 小时/分）
-- (NSString *)cmb_shortString{
-    return [self cmb_stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+- (NSString *)yyl_shortString{
+    return [self yyl_stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
 }
 
 //示例： 2/13/19  （月/日/年）
-- (NSString *)cmb_shortDateString{
-    return [self cmb_stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
+- (NSString *)yyl_shortDateString{
+    return [self yyl_stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
 }
 
 //示例： 4:01 PM
-- (NSString *)cmb_shortTimeString{
-    return [self cmb_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterShortStyle];
+- (NSString *)yyl_shortTimeString{
+    return [self yyl_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterShortStyle];
 }
 
 //示例： Feb 13,2019 at 4:01:42 PM
-- (NSString *)cmb_mediumString{
-    return [self cmb_stringWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle ];
+- (NSString *)yyl_mediumString{
+    return [self yyl_stringWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle ];
 }
 
 //示例： Feb 13,2019
-- (NSString *)cmb_mediumDateString{
-    return [self cmb_stringWithDateStyle:NSDateFormatterMediumStyle  timeStyle:NSDateFormatterNoStyle];
+- (NSString *)yyl_mediumDateString{
+    return [self yyl_stringWithDateStyle:NSDateFormatterMediumStyle  timeStyle:NSDateFormatterNoStyle];
 }
 
 //示例： 4:01:42 PM
-- (NSString *)cmb_mediumTimeString{
-    return [self cmb_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterMediumStyle ];
+- (NSString *)yyl_mediumTimeString{
+    return [self yyl_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterMediumStyle ];
 }
 
 //示例： February 13,2019 at 4:01:42 PM GMT+8
-- (NSString *)cmb_longString{
-    return [self cmb_stringWithDateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterLongStyle ];
+- (NSString *)yyl_longString{
+    return [self yyl_stringWithDateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterLongStyle ];
 }
 
 //示例： February 13,2019
-- (NSString *)cmb_longDateString{
-    return [self cmb_stringWithDateStyle:NSDateFormatterLongStyle  timeStyle:NSDateFormatterNoStyle];
+- (NSString *)yyl_longDateString{
+    return [self yyl_stringWithDateStyle:NSDateFormatterLongStyle  timeStyle:NSDateFormatterNoStyle];
 }
 
 //示例： 4:01:42 PM GMT+8
-- (NSString *)cmb_longTimeString{
-    return [self cmb_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterLongStyle ];
+- (NSString *)yyl_longTimeString{
+    return [self yyl_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterLongStyle ];
 }
 
 //示例： 2019-02-13  返回NSString类型
-- (NSString *)cmb_yyyyMMddString
+- (NSString *)yyl_yyyyMMddString
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
@@ -234,7 +234,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 2019-02-13  返回NSDate类型
-- (NSDate *)cmb_getDateOnly
+- (NSDate *)yyl_getDateOnly
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd";
@@ -244,7 +244,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 2019.02.13
-- (NSString *)cmb_yyyyMMddDotString
+- (NSString *)yyl_yyyyMMddDotString
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy.MM.dd"];
@@ -253,7 +253,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 2019/2/13
-- (NSString *)cmb_yyyyMMddSlashString
+- (NSString *)yyl_yyyyMMddSlashString
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy/M/d"];
@@ -262,7 +262,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 2019年02月13日
-- (NSString *)cmb_yyyyMMddString_CN
+- (NSString *)yyl_yyyyMMddString_CN
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy年MM月dd日"];
@@ -271,7 +271,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 2019-02-13 16:01:42
-- (NSString *)cmb_yyyyMMddHHmmssString
+- (NSString *)yyl_yyyyMMddHHmmssString
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -280,7 +280,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 16:01  返回NSString类型
-- (NSString *)cmb_HHmmString
+- (NSString *)yyl_HHmmString
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"HH:mm"];
@@ -289,7 +289,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 2019-02-13  返回NSDate类型
-- (NSDate *)cmb_getTimeOnly
+- (NSDate *)yyl_getTimeOnly
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat=@"HH:mm";
@@ -299,7 +299,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 2019-02-13 Wed  （星期三）
-- (NSString *)cmb_yyyyMMddEEString
+- (NSString *)yyl_yyyyMMddEEString
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd EE"];
@@ -308,7 +308,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 2019年02月13日 Wednesday
-- (NSString *)cmb_yyyyMMddEEEEString_CN
+- (NSString *)yyl_yyyyMMddEEEEString_CN
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy年MM月dd日 EEEE"];
@@ -317,7 +317,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 02月13日 Wednesday
-- (NSString *)cmb_MMddEEEEString_CN
+- (NSString *)yyl_MMddEEEEString_CN
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM月dd日 EEEE"];
@@ -326,7 +326,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： 04
-- (NSString *)cmb_eeString
+- (NSString *)yyl_eeString
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"ee"];
@@ -335,7 +335,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //示例： Wednesday
-- (NSString *)cmb_EEEEString
+- (NSString *)yyl_EEEEString
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"EEEE"];
@@ -344,7 +344,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 #pragma mark -  ***** Relative Dates 日期计算 *****
-- (NSDate *)cmb_dateByAddingYears:(NSInteger)years
+- (NSDate *)yyl_dateByAddingYears:(NSInteger)years
 {
     NSCalendar *calendar =  [NSCalendar currentCalendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
@@ -352,7 +352,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return [calendar dateByAddingComponents:components toDate:self options:0];
 }
 
-- (NSDate *)cmb_dateByAddingMonths:(NSInteger)months
+- (NSDate *)yyl_dateByAddingMonths:(NSInteger)months
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
@@ -360,7 +360,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return [calendar dateByAddingComponents:components toDate:self options:0];
 }
 
-- (NSDate *)cmb_dateByAddingWeeks:(NSInteger)weeks
+- (NSDate *)yyl_dateByAddingWeeks:(NSInteger)weeks
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [[NSDateComponents alloc] init];
@@ -369,7 +369,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 // timeIntervalSinceReferenceDate初始化方式: 当前date对象 与 2001-01-01 00:00:00 的时间间隔
-- (NSDate *)cmb_dateByAddingDays:(NSInteger)days
+- (NSDate *)yyl_dateByAddingDays:(NSInteger)days
 {
     //方法一
     NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + S_DAY * days;
@@ -385,14 +385,14 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     //    return newDate;
 }
 
-- (NSDate *)cmb_dateByAddingHours:(NSInteger)hours
+- (NSDate *)yyl_dateByAddingHours:(NSInteger)hours
 {
     NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + S_HOUR * hours;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
-- (NSDate *)cmb_dateByAddingMinutes:(NSInteger)minutes
+- (NSDate *)yyl_dateByAddingMinutes:(NSInteger)minutes
 {
     //方法一
     NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + S_MINUTE * minutes;
@@ -404,7 +404,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     //    return [[NSCalendar currentCalendar] dateByAddingComponents:c toDate:self options:0];
 }
 
-- (NSDate *)cmb_dateByAddingSeconds:(NSInteger)seconds
+- (NSDate *)yyl_dateByAddingSeconds:(NSInteger)seconds
 {
     NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + seconds;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
@@ -413,49 +413,49 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 
 #pragma mark -  ***** Relative Dates 相对日期 *****
 //几天后（从今天往后计算）
-+ (NSDate *)cmb_dateWithDaysFromNow:(NSInteger)days{
-    return [[NSDate date] cmb_dateByAddingDays:days];
++ (NSDate *)yyl_dateWithDaysFromNow:(NSInteger)days{
+    return [[NSDate date] yyl_dateByAddingDays:days];
 }
 
 //几天前（从今天往前推算）
-+ (NSDate *)cmb_dateWithDaysBeforeNow:(NSInteger)days{
-    return [[NSDate date] cmb_dateByAddingDays:(days * -1)];
++ (NSDate *)yyl_dateWithDaysBeforeNow:(NSInteger)days{
+    return [[NSDate date] yyl_dateByAddingDays:(days * -1)];
 }
 
 //明天
-+ (NSDate *)cmb_dateTomorrow{
-    return [NSDate cmb_dateWithDaysFromNow:1];
++ (NSDate *)yyl_dateTomorrow{
+    return [NSDate yyl_dateWithDaysFromNow:1];
 }
 
 //昨天
-+ (NSDate *)cmb_dateYesterday
++ (NSDate *)yyl_dateYesterday
 {
-    return [NSDate cmb_dateWithDaysBeforeNow:1];
+    return [NSDate yyl_dateWithDaysBeforeNow:1];
 }
 
 //几小时之后的日期（几小时后是哪天）
-+ (NSDate *)cmb_dateWithHoursFromNow:(NSInteger)dHours{
++ (NSDate *)yyl_dateWithHoursFromNow:(NSInteger)dHours{
     NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + S_HOUR * dHours;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
 //几小时之前的日期（几小时前是哪天）
-+ (NSDate *)cmb_dateWithHoursBeforeNow:(NSInteger)dHours{
++ (NSDate *)yyl_dateWithHoursBeforeNow:(NSInteger)dHours{
     NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - S_HOUR * dHours;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
 //几分钟之后的日期（多少分钟后是哪天）
-+ (NSDate *)cmb_dateWithMinutesFromNow:(NSInteger)dMinutes{
++ (NSDate *)yyl_dateWithMinutesFromNow:(NSInteger)dMinutes{
     NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + S_MINUTE * dMinutes;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
 //几分钟之前的日期（多少分钟前是哪天）
-+ (NSDate *)cmb_dateWithMinutesBeforeNow:(NSInteger)dMinutes{
++ (NSDate *)yyl_dateWithMinutesBeforeNow:(NSInteger)dMinutes{
     NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - S_MINUTE * dMinutes;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
@@ -463,7 +463,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 
 #pragma mark - ***** Comparing dates 日期比较 *****
 //日期比较：是否同一天(只比较年月日)
-- (BOOL)cmb_isSameDay:(NSDate *)aDate{
+- (BOOL)yyl_isSameDay:(NSDate *)aDate{
     NSDateComponents *components1 = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     NSDateComponents *components2 = [[NSDate currentCalendar] components:componentFlags fromDate:aDate];
     return ((components1.year == components2.year) &&
@@ -472,7 +472,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //是否为同一天的同一小时
-- (BOOL)cmb_isSameDayAndHour:(NSDate*)aDate{
+- (BOOL)yyl_isSameDayAndHour:(NSDate*)aDate{
     //    NSCalendar* calendar = [NSCalendar currentCalendar];
     NSDateComponents* components1 = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     NSDateComponents* components2 = [[NSDate currentCalendar] components:componentFlags fromDate:aDate];
@@ -481,7 +481,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //周比较：七天为一周
-- (BOOL)cmb_isSameWeekAsDate:(NSDate *)aDate{
+- (BOOL)yyl_isSameWeekAsDate:(NSDate *)aDate{
     NSDateComponents *components1 = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     NSDateComponents *components2 = [[NSDate currentCalendar] components:componentFlags fromDate:aDate];
     // Must be same week. 12/31 and 1/1 will both be week "1" if they are in the same week
@@ -490,72 +490,72 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return (fabs([self timeIntervalSinceDate:aDate]) < S_WEEK);
 }
 
-- (BOOL)cmb_isThisWeek{
-    return [self cmb_isSameWeekAsDate:[NSDate date]];
+- (BOOL)yyl_isThisWeek{
+    return [self yyl_isSameWeekAsDate:[NSDate date]];
 }
 
-- (BOOL)cmb_isNextWeek{
+- (BOOL)yyl_isNextWeek{
     NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + S_WEEK;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
-    return [self cmb_isSameWeekAsDate:newDate];
+    return [self yyl_isSameWeekAsDate:newDate];
 }
 
-- (BOOL)cmb_isLastWeek{
+- (BOOL)yyl_isLastWeek{
     NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - S_WEEK;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
-    return [self cmb_isSameWeekAsDate:newDate];
+    return [self yyl_isSameWeekAsDate:newDate];
 }
 
 //月比较
-- (BOOL)cmb_isSameMonthAsDate:(NSDate *)aDate{
+- (BOOL)yyl_isSameMonthAsDate:(NSDate *)aDate{
     NSDateComponents *components1 = [[NSDate currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:self];
     NSDateComponents *components2 = [[NSDate currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:aDate];
     return ((components1.month == components2.month) &&
             (components1.year == components2.year));
 }
 
-- (BOOL)cmb_isThisMonth{
-    return [self cmb_isSameMonthAsDate:[NSDate date]];
+- (BOOL)yyl_isThisMonth{
+    return [self yyl_isSameMonthAsDate:[NSDate date]];
 }
 
-- (BOOL)cmb_isLastMonth{
-    return [self cmb_isSameMonthAsDate:[[NSDate date] cmb_dateByAddingMonths:-1]];
+- (BOOL)yyl_isLastMonth{
+    return [self yyl_isSameMonthAsDate:[[NSDate date] yyl_dateByAddingMonths:-1]];
 }
 
-- (NSDate*)cmb_lastMonth{
+- (NSDate*)yyl_lastMonth{
     NSDateComponents *c = [[NSDateComponents alloc] init];
     c.month = -1;
     return [[NSCalendar currentCalendar] dateByAddingComponents:c toDate:self options:0];
 }
 
-- (BOOL)cmb_isNextMonth{
-    return [self cmb_isSameMonthAsDate:[[NSDate date] cmb_dateByAddingMonths:1]];
+- (BOOL)yyl_isNextMonth{
+    return [self yyl_isSameMonthAsDate:[[NSDate date] yyl_dateByAddingMonths:1]];
 }
 
-- (BOOL)cmb_isSameYearAsDate:(NSDate *)aDate{
+- (BOOL)yyl_isSameYearAsDate:(NSDate *)aDate{
     NSDateComponents *components1 = [[NSDate currentCalendar] components:NSCalendarUnitYear fromDate:self];
     NSDateComponents *components2 = [[NSDate currentCalendar] components:NSCalendarUnitYear fromDate:aDate];
     return (components1.year == components2.year);
 }
 
-- (BOOL)cmb_isThisYear{
-    return [self cmb_isSameYearAsDate:[NSDate date]];
+- (BOOL)yyl_isThisYear{
+    return [self yyl_isSameYearAsDate:[NSDate date]];
 }
 
-- (BOOL)cmb_isNextYear{
+- (BOOL)yyl_isNextYear{
     NSDateComponents *components1 = [[NSDate currentCalendar] components:NSCalendarUnitYear fromDate:self];
     NSDateComponents *components2 = [[NSDate currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
     return (components1.year == (components2.year + 1));
 }
 
-- (BOOL)cmb_isLastYear{
+- (BOOL)yyl_isLastYear{
     NSDateComponents *components1 = [[NSDate currentCalendar] components:NSCalendarUnitYear fromDate:self];
     NSDateComponents *components2 = [[NSDate currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
     return (components1.year == (components2.year - 1));
 }
 
 //比aDate日期早
-- (BOOL)cmb_isEarlierThanDate:(NSDate *)aDate{
+- (BOOL)yyl_isEarlierThanDate:(NSDate *)aDate{
     //方法一
     //    if ([self timeIntervalSinceDate:aDate] >=0) {
     //        return NO;
@@ -567,21 +567,21 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //比aDate日期晚
-- (BOOL)cmb_isLaterThanDate:(NSDate *)aDate{
+- (BOOL)yyl_isLaterThanDate:(NSDate *)aDate{
     return ([self compare:aDate] == NSOrderedDescending);
 }
 
-- (BOOL)cmb_isInFuture{
-    return ([self cmb_isLaterThanDate:[NSDate date]]);
+- (BOOL)yyl_isInFuture{
+    return ([self yyl_isLaterThanDate:[NSDate date]]);
 }
 
-- (BOOL)cmb_isInPast{
-    return ([self cmb_isEarlierThanDate:[NSDate date]]);
+- (BOOL)yyl_isInPast{
+    return ([self yyl_isEarlierThanDate:[NSDate date]]);
 }
 
 #pragma mark - ***** Roles 特殊日期 *****
 //周末：周六和周天
-- (BOOL)cmb_isTypicallyWeekend{
+- (BOOL)yyl_isTypicallyWeekend{
     NSDateComponents *components = [[NSDate currentCalendar] components:NSCalendarUnitWeekday fromDate:self];
     if ((components.weekday == 1) ||
         (components.weekday == 7))
@@ -590,14 +590,14 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //工作日
-- (BOOL)cmb_isTypicallyWorkday
+- (BOOL)yyl_isTypicallyWorkday
 {
-    return ![self cmb_isTypicallyWeekend];
+    return ![self yyl_isTypicallyWeekend];
 }
 
 #pragma mark -- ***** 项目调用方法 *****
 //获得的时间不太准确，不确定具体意思，待研究
-- (NSDate *)cmb_dateAtStartOfDay{
+- (NSDate *)yyl_dateAtStartOfDay{
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     components.hour = 0;
     components.minute = 0;
@@ -606,7 +606,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //获得的时间不太准确，不确定具体意思，待研究
-- (NSDate *)cmb_dateAtEndOfDay{
+- (NSDate *)yyl_dateAtEndOfDay{
     NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
     components.hour = 23; // Thanks Aleksey Kononov
     components.minute = 59;
@@ -615,7 +615,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 // 取得该周的第一天,星期天为一周的第一天？ 2019-02-10 03:28:59 +0000 (测试日期是2019-02-14 11:28)
-- (NSDate *)cmb_beginningOfWeek
+- (NSDate *)yyl_beginningOfWeek
 {
     NSInteger week;
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -624,11 +624,11 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     //    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     comps = [calendar components:componentFlags fromDate:now];
     week = [comps weekday];
-    return [self cmb_dateByAddingDays:-((int)week-1)];
+    return [self yyl_dateByAddingDays:-((int)week-1)];
 }
 
 // 取得该周的最后一天，星期六为一周的第一天？ 2019-02-16 03:28:59 +0000 (测试日期是2019-02-14 11:28)
-- (NSDate *)cmb_endOfWeek;
+- (NSDate *)yyl_endOfWeek;
 {
     NSInteger week;
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
@@ -637,29 +637,29 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     //    NSInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     comps = [calendar components:componentFlags fromDate:now];
     week = [comps weekday];
-    return [self cmb_dateByAddingDays:(7-(int)week)];
+    return [self yyl_dateByAddingDays:(7-(int)week)];
 }
 
 //返回该月的第一天, 2019-02-01 03:38:30 +0000 (测试日期是2019-02-14 11:38)
-- (NSDate *)cmb_beginningOfMonth
+- (NSDate *)yyl_beginningOfMonth
 {
-    return [self cmb_dateByAddingDays:-(int)[self cmb_day] + 1];
+    return [self yyl_dateByAddingDays:-(int)[self yyl_day] + 1];
 }
 
 //该月的最后一天, 2019-02-28 03:38:30 +0000 (测试日期是2019-02-14 11:38)
-- (NSDate *)cmb_endOfMonth
+- (NSDate *)yyl_endOfMonth
 {
-    return [[[self cmb_beginningOfMonth] cmb_dateByAddingMonths:1] cmb_dateByAddingDays:-1];
+    return [[[self yyl_beginningOfMonth] yyl_dateByAddingMonths:1] yyl_dateByAddingDays:-1];
 }
 
 //取得日期的描述文字 今天 昨天 前天 N天前
--(NSString *)cmb_NdaysBefore
+-(NSString *)yyl_NdaysBefore
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat=@"yyyy-MM-dd";
     NSString * strDate=[formatter stringFromDate:self];
     NSDate * today = [formatter dateFromString:strDate]; //今天
-    NSInteger days = [self cmb_compareDaysToDate:today];
+    NSInteger days = [self yyl_compareDaysToDate:today];
     NSString * strReturn=@"";
     if (days==0) strReturn=@"今天";
     else if (days==1) strReturn=@"昨天";
@@ -669,58 +669,58 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //取得当前月份的天数
-- (NSInteger)cmb_getDaysOfMonth
+- (NSInteger)yyl_getDaysOfMonth
 {
-    NSDate * firstDay = [self cmb_beginningOfMonth];
-    NSDate * endDay = [self cmb_endOfMonth];
-    return [firstDay cmb_compareDaysToDate:endDay]+1;
+    NSDate * firstDay = [self yyl_beginningOfMonth];
+    NSDate * endDay = [self yyl_endOfMonth];
+    return [firstDay yyl_compareDaysToDate:endDay]+1;
 }
 
 #pragma mark - ***** Retrieving Intervals 时间间隔 *****
 //当前时间距aDate过去多少分钟
-- (NSInteger)cmb_minutesAfterDate:(NSDate *)aDate
+- (NSInteger)yyl_minutesAfterDate:(NSDate *)aDate
 {
     NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
     return (NSInteger) (ti / S_MINUTE);
 }
 
 //aDate距当前时间多少分钟后
-- (NSInteger)cmb_minutesBeforeDate:(NSDate *)aDate
+- (NSInteger)yyl_minutesBeforeDate:(NSDate *)aDate
 {
     NSTimeInterval ti = [aDate timeIntervalSinceDate:self];
     return (NSInteger) (ti / S_MINUTE);
 }
 
 //当前时间距aDate过去多少小时
-- (NSInteger)cmb_hoursAfterDate:(NSDate *)aDate
+- (NSInteger)yyl_hoursAfterDate:(NSDate *)aDate
 {
     NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
     return (NSInteger) (ti / S_HOUR);
 }
 
 //aDate距当前时间多少小时后
-- (NSInteger)cmb_hoursBeforeDate:(NSDate *)aDate
+- (NSInteger)yyl_hoursBeforeDate:(NSDate *)aDate
 {
     NSTimeInterval ti = [aDate timeIntervalSinceDate:self];
     return (NSInteger) (ti / S_HOUR);
 }
 
 //当前时间距aDate过去多少天
-- (NSInteger)cmb_daysAfterDate:(NSDate *)aDate
+- (NSInteger)yyl_daysAfterDate:(NSDate *)aDate
 {
     NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
     return (NSInteger) (ti / S_DAY);
 }
 
 //aDate距当前时间多少天后
-- (NSInteger)cmb_daysBeforeDate:(NSDate *)aDate
+- (NSInteger)yyl_daysBeforeDate:(NSDate *)aDate
 {
     NSTimeInterval ti = [aDate timeIntervalSinceDate:self];
     return (NSInteger) (ti / S_DAY);
 }
 
 //当前时间距anotherDate相隔多少天
-- (NSInteger)cmb_compareDaysToDate:(NSDate *)anotherDate
+- (NSInteger)yyl_compareDaysToDate:(NSDate *)anotherDate
 {
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *components = [gregorianCalendar components:NSCalendarUnitDay fromDate:self toDate:anotherDate options:0];
@@ -728,7 +728,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //  2019/2/14 16:00:00 +0000   待研究
-- (NSDate *)cmb_dateByMovingToBeginningOfDay
+- (NSDate *)yyl_dateByMovingToBeginningOfDay
 {
     //    unsigned int flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     NSDateComponents* parts = [[NSCalendar currentCalendar] components:componentFlags fromDate:self];
@@ -739,9 +739,9 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 // 没年份    02-15  10:05  (测试日期是02-14 10:05)
-- (NSString*)cmb_description{
+- (NSString*)yyl_description{
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    NSDate* beginningOfToday = [[NSDate date] cmb_dateByMovingToBeginningOfDay];
+    NSDate* beginningOfToday = [[NSDate date] yyl_dateByMovingToBeginningOfDay];
     
     NSTimeInterval oneDayInterval = 60*60*24;
     NSTimeInterval interval = [self timeIntervalSinceDate:beginningOfToday];
@@ -773,9 +773,9 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 // 有年份    2019年2月15日  (测试日期是02-14 10:05)
-- (NSString*)cmb_description_date{
+- (NSString*)yyl_description_date{
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    NSDate* beginningOfToday = [[NSDate date] cmb_dateByMovingToBeginningOfDay];
+    NSDate* beginningOfToday = [[NSDate date] yyl_dateByMovingToBeginningOfDay];
     
     NSTimeInterval oneDayInterval = 60*60*24;
     NSTimeInterval interval = [self timeIntervalSinceDate:beginningOfToday];
@@ -809,7 +809,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 
 #pragma mark - ***** CMB 网易有料 *****
 //获取当前时间戳 毫秒 (网易有料：网络请求时间戳参数)
-+(NSTimeInterval)cmb_getCurrentMillisecondInterval
++(NSTimeInterval)yyl_getCurrentMillisecondInterval
 {
     NSDate* date = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval timeInterval=[date timeIntervalSince1970]*1000;
@@ -817,7 +817,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //计算两个时间戳之差 (网易有料：浏览时长行为上报)
-+(NSUInteger)cmb_timeFromBeginTimeInterval:(NSTimeInterval)beginTimestamp toEndTimeInterval:(NSTimeInterval)endTimestamp
++(NSUInteger)yyl_timeFromBeginTimeInterval:(NSTimeInterval)beginTimestamp toEndTimeInterval:(NSTimeInterval)endTimestamp
 {
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
@@ -839,7 +839,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
 }
 
 //时间戳变为格式时间 (网易有料：视频相关行为上报)
-+(NSString *)cmb_convertStrByTime:(NSTimeInterval)timeInterval
++(NSString *)yyl_convertStrByTime:(NSTimeInterval)timeInterval
 {
     //    long long time=[timeStr longLongValue];
     //    如果服务器返回的是13位字符串，需要除以1000，否则显示不正确(13位其实代表的是毫秒，需要除以1000)
