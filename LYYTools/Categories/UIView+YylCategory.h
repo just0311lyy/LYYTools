@@ -10,4 +10,9 @@
 
 @interface UIView (YylCategory)
 
+@property (nonatomic, assign) CGFloat yyl_x;
+@property (nonatomic, assign) CGFloat yyl_y;
+@property (nonatomic, assign) CGFloat yyl_w;
+@property (nonatomic, assign) CGFloat yyl_h;
+
 @end

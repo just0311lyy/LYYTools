@@ -27,6 +27,7 @@
 		D728CDF2221CFC0500C0EED0 /* UIImage+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDF1221CFC0500C0EED0 /* UIImage+YylCategory.m */; };
 		D728CDF5221CFCB200C0EED0 /* NSString+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */; };
 		D7B549D1221E588900D9244D /* NSDate+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B549D0221E588900D9244D /* NSDate+YylCategory.m */; };
+		D7B549D4221F85AF00D9244D /* UIView+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B549D3221F85AF00D9244D /* UIView+YylCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YylCategory.m"; sourceTree = "<group>"; };
 		D7B549CF221E588900D9244D /* NSDate+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+YylCategory.h"; sourceTree = "<group>"; };
 		D7B549D0221E588900D9244D /* NSDate+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YylCategory.m"; sourceTree = "<group>"; };
+		D7B549D2221F85AF00D9244D /* UIView+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YylCategory.h"; sourceTree = "<group>"; };
+		D7B549D3221F85AF00D9244D /* UIView+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YylCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +253,8 @@
 				D728CDEE221CFACD00C0EED0 /* UILabel+YylCategory.m */,
 				D7B549CF221E588900D9244D /* NSDate+YylCategory.h */,
 				D7B549D0221E588900D9244D /* NSDate+YylCategory.m */,
+				D7B549D2221F85AF00D9244D /* UIView+YylCategory.h */,
+				D7B549D3221F85AF00D9244D /* UIView+YylCategory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -457,6 +462,7 @@
 			files = (
 				7D5B761E2178AD1F00E81EE2 /* LYYLazyLoadTableViewController.m in Sources */,
 				7DF2EA59211336F400575713 /* CALayer+FSUI.m in Sources */,
+				D7B549D4221F85AF00D9244D /* UIView+YylCategory.m in Sources */,
 				D728CDEF221CFACD00C0EED0 /* UILabel+YylCategory.m in Sources */,
 				D7B549D1221E588900D9244D /* NSDate+YylCategory.m in Sources */,
 				D728CDF5221CFCB200C0EED0 /* NSString+YylCategory.m in Sources */,
