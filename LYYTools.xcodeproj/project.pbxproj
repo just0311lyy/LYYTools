@@ -26,6 +26,8 @@
 		D728CDEF221CFACD00C0EED0 /* UILabel+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDEE221CFACD00C0EED0 /* UILabel+YylCategory.m */; };
 		D728CDF2221CFC0500C0EED0 /* UIImage+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDF1221CFC0500C0EED0 /* UIImage+YylCategory.m */; };
 		D728CDF5221CFCB200C0EED0 /* NSString+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */; };
+		D7B0C7292228E88B008EF45C /* YLFileManage.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0C7282228E88B008EF45C /* YLFileManage.m */; };
+		D7B0C72C2228E94C008EF45C /* YLUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0C72B2228E94C008EF45C /* YLUserDefault.m */; };
 		D7B549D1221E588900D9244D /* NSDate+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B549D0221E588900D9244D /* NSDate+YylCategory.m */; };
 		D7B549D4221F85AF00D9244D /* UIView+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B549D3221F85AF00D9244D /* UIView+YylCategory.m */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,10 @@
 		D728CDF1221CFC0500C0EED0 /* UIImage+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YylCategory.m"; sourceTree = "<group>"; };
 		D728CDF3221CFCB200C0EED0 /* NSString+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YylCategory.h"; sourceTree = "<group>"; };
 		D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YylCategory.m"; sourceTree = "<group>"; };
+		D7B0C7272228E88B008EF45C /* YLFileManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLFileManage.h; sourceTree = "<group>"; };
+		D7B0C7282228E88B008EF45C /* YLFileManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLFileManage.m; sourceTree = "<group>"; };
+		D7B0C72A2228E94C008EF45C /* YLUserDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLUserDefault.h; sourceTree = "<group>"; };
+		D7B0C72B2228E94C008EF45C /* YLUserDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLUserDefault.m; sourceTree = "<group>"; };
 		D7B549CF221E588900D9244D /* NSDate+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+YylCategory.h"; sourceTree = "<group>"; };
 		D7B549D0221E588900D9244D /* NSDate+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YylCategory.m"; sourceTree = "<group>"; };
 		D7B549D2221F85AF00D9244D /* UIView+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YylCategory.h"; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 		7D3BBF3F2113262F0040E37F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D7B0C7262228E82F008EF45C /* FileManage */,
 				7DF2EA5F2119583F00575713 /* Singles */,
 				7D3BBF402113262F0040E37F /* Https */,
 				7D3BBF412113262F0040E37F /* Buttons */,
@@ -274,6 +281,17 @@
 				A630336ACEA554D7651E0E79 /* libPods-LYYTools.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7B0C7262228E82F008EF45C /* FileManage */ = {
+			isa = PBXGroup;
+			children = (
+				D7B0C7272228E88B008EF45C /* YLFileManage.h */,
+				D7B0C7282228E88B008EF45C /* YLFileManage.m */,
+				D7B0C72A2228E94C008EF45C /* YLUserDefault.h */,
+				D7B0C72B2228E94C008EF45C /* YLUserDefault.m */,
+			);
+			path = FileManage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,11 +485,13 @@
 				D7B549D1221E588900D9244D /* NSDate+YylCategory.m in Sources */,
 				D728CDF5221CFCB200C0EED0 /* NSString+YylCategory.m in Sources */,
 				7DF2EA64211960EE00575713 /* LYYSingles.m in Sources */,
+				D7B0C7292228E88B008EF45C /* YLFileManage.m in Sources */,
 				7D3BBF442113266F0040E37F /* LYYHTTPSManager.m in Sources */,
 				7D3BBF122113255A0040E37F /* ViewController.m in Sources */,
 				7DF2EA58211336F400575713 /* FSCustomButton.m in Sources */,
 				D728CDF2221CFC0500C0EED0 /* UIImage+YylCategory.m in Sources */,
 				7D3BBF1D2113255E0040E37F /* main.m in Sources */,
+				D7B0C72C2228E94C008EF45C /* YLUserDefault.m in Sources */,
 				D728CDEC221CF8F800C0EED0 /* UIColor+YylCategory.m in Sources */,
 				7D3BBF0F2113255A0040E37F /* AppDelegate.m in Sources */,
 				7D5B76052178461000E81EE2 /* LYYBaseViewController.m in Sources */,
