@@ -28,6 +28,7 @@
 		D728CDF5221CFCB200C0EED0 /* NSString+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */; };
 		D7B0C7292228E88B008EF45C /* YLFileManage.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0C7282228E88B008EF45C /* YLFileManage.m */; };
 		D7B0C72C2228E94C008EF45C /* YLUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0C72B2228E94C008EF45C /* YLUserDefault.m */; };
+		D7B0C72F2228EA6E008EF45C /* YLBaseNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0C72E2228EA6E008EF45C /* YLBaseNetworkManager.m */; };
 		D7B549D1221E588900D9244D /* NSDate+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B549D0221E588900D9244D /* NSDate+YylCategory.m */; };
 		D7B549D4221F85AF00D9244D /* UIView+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B549D3221F85AF00D9244D /* UIView+YylCategory.m */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,8 @@
 		D7B0C7282228E88B008EF45C /* YLFileManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLFileManage.m; sourceTree = "<group>"; };
 		D7B0C72A2228E94C008EF45C /* YLUserDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLUserDefault.h; sourceTree = "<group>"; };
 		D7B0C72B2228E94C008EF45C /* YLUserDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLUserDefault.m; sourceTree = "<group>"; };
+		D7B0C72D2228EA6E008EF45C /* YLBaseNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLBaseNetworkManager.h; sourceTree = "<group>"; };
+		D7B0C72E2228EA6E008EF45C /* YLBaseNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLBaseNetworkManager.m; sourceTree = "<group>"; };
 		D7B549CF221E588900D9244D /* NSDate+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+YylCategory.h"; sourceTree = "<group>"; };
 		D7B549D0221E588900D9244D /* NSDate+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YylCategory.m"; sourceTree = "<group>"; };
 		D7B549D2221F85AF00D9244D /* UIView+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YylCategory.h"; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 			children = (
 				7D3BBF422113266F0040E37F /* LYYHTTPSManager.h */,
 				7D3BBF432113266F0040E37F /* LYYHTTPSManager.m */,
+				D7B0C72D2228EA6E008EF45C /* YLBaseNetworkManager.h */,
+				D7B0C72E2228EA6E008EF45C /* YLBaseNetworkManager.m */,
 			);
 			path = Https;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7B0C72F2228EA6E008EF45C /* YLBaseNetworkManager.m in Sources */,
 				7D5B761E2178AD1F00E81EE2 /* LYYLazyLoadTableViewController.m in Sources */,
 				7DF2EA59211336F400575713 /* CALayer+FSUI.m in Sources */,
 				D7B549D4221F85AF00D9244D /* UIView+YylCategory.m in Sources */,

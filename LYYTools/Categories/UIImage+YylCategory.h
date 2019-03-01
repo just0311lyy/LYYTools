@@ -24,8 +24,8 @@
 /**
  * 将一张图片变成指定的大小
  * @param image 原图片
- * @param size 指定的大小
+ * @param newSize 指定的大小
  * @return 指定大小的图片
  */
-+ (UIImage *)yyl_scaleToSize:(UIImage *)image size:(CGSize)size;
++ (UIImage *)yyl_imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 @end
