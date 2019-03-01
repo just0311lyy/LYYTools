@@ -21,7 +21,7 @@ typedef void(^YylNetworkFailure)(id result);
 
 @interface YLBaseNetworkManager : NSObject
 singleH(YLBaseNetworkManager)
-@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
+//@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 - (void)sendRequestToServiceByGet:(NSString *)url
                             parms:(NSDictionary *)parms
                           success:(YylNetworkSuccess)success

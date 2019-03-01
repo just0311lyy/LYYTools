@@ -8,11 +8,12 @@
 
 #import "YLBaseNetworkManager.h"
 #import "UIImage+YylCategory.h"
-//@interface YLBaseNetworkManager
-//
-//@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
-//
-//@end
+
+@interface YLBaseNetworkManager ()
+
+@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
+
+@end
 
 @implementation YLBaseNetworkManager
 singleM(YLBaseNetworkManager)
