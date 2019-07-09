@@ -32,6 +32,7 @@
 		D7B0C73322291410008EF45C /* YLAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0C73222291410008EF45C /* YLAlertViewController.m */; };
 		D7B549D1221E588900D9244D /* NSDate+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B549D0221E588900D9244D /* NSDate+YylCategory.m */; };
 		D7B549D4221F85AF00D9244D /* UIView+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B549D3221F85AF00D9244D /* UIView+YylCategory.m */; };
+		D7CF9F6122D446BF00B24AEE /* YylToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF9F6022D446BF00B24AEE /* YylToast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,8 @@
 		D7B549D0221E588900D9244D /* NSDate+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YylCategory.m"; sourceTree = "<group>"; };
 		D7B549D2221F85AF00D9244D /* UIView+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+YylCategory.h"; sourceTree = "<group>"; };
 		D7B549D3221F85AF00D9244D /* UIView+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YylCategory.m"; sourceTree = "<group>"; };
+		D7CF9F5F22D446BF00B24AEE /* YylToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YylToast.h; sourceTree = "<group>"; };
+		D7CF9F6022D446BF00B24AEE /* YylToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YylToast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,7 @@
 		7D3BBF3F2113262F0040E37F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D7CF9F5E22D446BF00B24AEE /* Toast */,
 				D7B0C730222913E9008EF45C /* AlertViews */,
 				D7B0C7262228E82F008EF45C /* FileManage */,
 				7DF2EA5F2119583F00575713 /* Singles */,
@@ -310,6 +314,15 @@
 				D7B0C73222291410008EF45C /* YLAlertViewController.m */,
 			);
 			path = AlertViews;
+			sourceTree = "<group>";
+		};
+		D7CF9F5E22D446BF00B24AEE /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				D7CF9F5F22D446BF00B24AEE /* YylToast.h */,
+				D7CF9F6022D446BF00B24AEE /* YylToast.m */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +523,7 @@
 				7DF2EA58211336F400575713 /* FSCustomButton.m in Sources */,
 				D728CDF2221CFC0500C0EED0 /* UIImage+YylCategory.m in Sources */,
 				D7B0C73322291410008EF45C /* YLAlertViewController.m in Sources */,
+				D7CF9F6122D446BF00B24AEE /* YylToast.m in Sources */,
 				7D3BBF1D2113255E0040E37F /* main.m in Sources */,
 				D7B0C72C2228E94C008EF45C /* YLUserDefault.m in Sources */,
 				D728CDEC221CF8F800C0EED0 /* UIColor+YylCategory.m in Sources */,
