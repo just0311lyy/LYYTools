@@ -14,9 +14,37 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+//若引用声明：用于block前声明，然后block中使用weakSelf
+#define WeakSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
+/** 日志打印 */
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...) {}
+#endif
 
+//#ifdef DEBUG
+//#define NSLog(FORMAT, ...) fprintf(stderr,"时间:%s 行号:%d 文件名:%s\t方法名:%s\n%s\n", __TIME__,__LINE__,[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],__func__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
+//#else
+//#define NSLog(FORMAT, ...) nil
+//#endif
 
+#define  __SYSTEM_APPKey_PRD //注释为生产环境
+#ifndef __SYSTEM_APPKey_PRD
+    #define JPushAppKey         @"2281713b175e973a892559f7"           // 生产key
+#else
+    #define JPushAppKey         @"917455ab6b50bce0b52ddb5e2ea217a0"   // 测试key
+#endif
+
+/** 逻辑宽高 */
+#define ScreenWidth ([[UIScreen mainScreen] bounds].size.width)
+#define ScreenHeight ([[UIScreen mainScreen] bounds].size.height)
+#define LOGIC_DEVICE_WIDTH   (750)  //逻辑宽
+#define LOGIC_DEVICE_HEIGHT  (1334) //逻辑高
+#define GetLogicPixelX(value) ((ScreenWidth/LOGIC_DEVICE_WIDTH)*(value)) //逻辑尺寸
+#define GetLogicFont(value) ((ScreenWidth*2/LOGIC_DEVICE_WIDTH)*(value)) //字体逻辑大小
+#define common_space GetLogicPixelX(20) //标准间隔
 
 //单例类 arc 或者 mrc
 //.h文件

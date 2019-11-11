@@ -33,6 +33,9 @@
 		D7B549D1221E588900D9244D /* NSDate+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B549D0221E588900D9244D /* NSDate+YylCategory.m */; };
 		D7B549D4221F85AF00D9244D /* UIView+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B549D3221F85AF00D9244D /* UIView+YylCategory.m */; };
 		D7CF9F6122D446BF00B24AEE /* YylToast.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CF9F6022D446BF00B24AEE /* YylToast.m */; };
+		D7FA71742378F5EA00685F62 /* YCPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA716D2378F5EA00685F62 /* YCPresentationController.m */; };
+		D7FA71752378F5EA00685F62 /* YCPopoverAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA71722378F5EA00685F62 /* YCPopoverAnimator.m */; };
+		D7FA71762378F5EA00685F62 /* UIViewController+YCPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA71732378F5EA00685F62 /* UIViewController+YCPopover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,13 @@
 		D7B549D3221F85AF00D9244D /* UIView+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+YylCategory.m"; sourceTree = "<group>"; };
 		D7CF9F5F22D446BF00B24AEE /* YylToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YylToast.h; sourceTree = "<group>"; };
 		D7CF9F6022D446BF00B24AEE /* YylToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YylToast.m; sourceTree = "<group>"; };
+		D7FA716D2378F5EA00685F62 /* YCPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCPresentationController.m; sourceTree = "<group>"; };
+		D7FA716E2378F5EA00685F62 /* YCPopoverAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCPopoverAnimator.h; sourceTree = "<group>"; };
+		D7FA716F2378F5EA00685F62 /* UIViewController+YCPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YCPopover.h"; sourceTree = "<group>"; };
+		D7FA71702378F5EA00685F62 /* YCPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCPresentationController.h; sourceTree = "<group>"; };
+		D7FA71712378F5EA00685F62 /* YCPopoverMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCPopoverMacro.h; sourceTree = "<group>"; };
+		D7FA71722378F5EA00685F62 /* YCPopoverAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCPopoverAnimator.m; sourceTree = "<group>"; };
+		D7FA71732378F5EA00685F62 /* UIViewController+YCPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YCPopover.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +220,7 @@
 		7D3BBF3F2113262F0040E37F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D7FA716B2378F5EA00685F62 /* PopoverViews */,
 				D7CF9F5E22D446BF00B24AEE /* Toast */,
 				D7B0C730222913E9008EF45C /* AlertViews */,
 				D7B0C7262228E82F008EF45C /* FileManage */,
@@ -323,6 +334,28 @@
 				D7CF9F6022D446BF00B24AEE /* YylToast.m */,
 			);
 			path = Toast;
+			sourceTree = "<group>";
+		};
+		D7FA716B2378F5EA00685F62 /* PopoverViews */ = {
+			isa = PBXGroup;
+			children = (
+				D7FA716C2378F5EA00685F62 /* YCPopover */,
+			);
+			path = PopoverViews;
+			sourceTree = "<group>";
+		};
+		D7FA716C2378F5EA00685F62 /* YCPopover */ = {
+			isa = PBXGroup;
+			children = (
+				D7FA71712378F5EA00685F62 /* YCPopoverMacro.h */,
+				D7FA716E2378F5EA00685F62 /* YCPopoverAnimator.h */,
+				D7FA71722378F5EA00685F62 /* YCPopoverAnimator.m */,
+				D7FA71702378F5EA00685F62 /* YCPresentationController.h */,
+				D7FA716D2378F5EA00685F62 /* YCPresentationController.m */,
+				D7FA71732378F5EA00685F62 /* UIViewController+YCPopover.m */,
+				D7FA716F2378F5EA00685F62 /* UIViewController+YCPopover.h */,
+			);
+			path = YCPopover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,8 +547,11 @@
 				7DF2EA59211336F400575713 /* CALayer+FSUI.m in Sources */,
 				D7B549D4221F85AF00D9244D /* UIView+YylCategory.m in Sources */,
 				D728CDEF221CFACD00C0EED0 /* UILabel+YylCategory.m in Sources */,
+				D7FA71742378F5EA00685F62 /* YCPresentationController.m in Sources */,
 				D7B549D1221E588900D9244D /* NSDate+YylCategory.m in Sources */,
 				D728CDF5221CFCB200C0EED0 /* NSString+YylCategory.m in Sources */,
+				D7FA71752378F5EA00685F62 /* YCPopoverAnimator.m in Sources */,
+				D7FA71762378F5EA00685F62 /* UIViewController+YCPopover.m in Sources */,
 				7DF2EA64211960EE00575713 /* LYYSingles.m in Sources */,
 				D7B0C7292228E88B008EF45C /* YLFileManage.m in Sources */,
 				7D3BBF442113266F0040E37F /* LYYHTTPSManager.m in Sources */,

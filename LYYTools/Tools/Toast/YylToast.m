@@ -29,9 +29,7 @@
 @implementation YylToast
 
 - (void)dealloc{
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIDeviceOrientationDidChangeNotification
-                                                  object:[UIDevice currentDevice]];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:[UIDevice currentDevice]];
 
 }
 
