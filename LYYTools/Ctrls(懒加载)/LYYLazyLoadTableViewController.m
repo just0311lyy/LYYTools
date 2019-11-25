@@ -32,8 +32,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
+#pragma mark -- **** 列表点击事件 UITableViewDataSource ****
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -53,6 +52,87 @@
     cell.textLabel.text = [_groups objectAtIndex:indexPath.row];
     return cell;
 }
+
+#pragma mark -- **** 列表点击事件 UITableViewDelegate ****
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //取消选中状态
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    switch (indexPath.section) {
+        case 0://精彩活动
+            break;
+        case 1://今日计划
+        {
+            
+        }
+            break;
+        case 2://发现·话题
+            break;
+        default:
+            break;
+    }
+}
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    switch (indexPath.section) {
+//        case 0://精彩活动
+//            return [HomeActivitiesCell getActivitiesHeight];
+//            break;
+//        case 1://今日计划
+//        {
+//            return [HomeTodayPlanCell getTodayPlanHeight];
+//        }
+//            break;
+//        case 2://发现·话题
+//            return [HomeFindTopicCell getTopicHeight];
+//            break;
+//        default:
+//            return 0;
+//    }
+//}
+
+//制定个性标题，这里通过UIview来设计标题，功能上丰富，变化多。
+//- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    CGFloat sectionHeader_h = [HealthHomeSectionHeaderView getHeaderHeight];
+//    CGRect sectionHeaderRect = CGRectMake(0, 0, SCREEN_WIDTH, sectionHeader_h);
+//    HealthHomeSectionModel *sectionModel = [[HealthHomeSectionModel alloc] init];
+//    if (section == 0)//精彩活动
+//    {
+//        HealthHomeSectionHeaderView *activitiesHeaderView = [[HealthHomeSectionHeaderView alloc] initWithFrame:sectionHeaderRect];
+//        sectionModel.imageName = @"";
+//        sectionModel.titleName = @"精彩活动";
+//        sectionModel.detailTitle = @"";
+//        sectionModel.hasArrow = NO;
+//        [activitiesHeaderView setSectionModel:sectionModel];
+//        return activitiesHeaderView;
+//    }
+//    if (section == 1)//今日计划
+//    {
+//        HealthHomeSectionHeaderView *todayPlanHeaderView = [[HealthHomeSectionHeaderView alloc] initWithFrame:sectionHeaderRect];
+//        sectionModel.imageName = @"";
+//        sectionModel.titleName = @"今日计划";
+//        sectionModel.detailTitle = @"";
+//        sectionModel.hasArrow = NO;
+//        [todayPlanHeaderView setSectionModel:sectionModel];
+//        return todayPlanHeaderView;
+//    }
+//    if (section == 2) //发现话题
+//    {
+//        HealthHomeSectionHeaderView *topicHeaderView = [[HealthHomeSectionHeaderView alloc] initWithFrame:sectionHeaderRect];
+//        sectionModel.imageName = @"";
+//        sectionModel.titleName = @"发现·话题";
+//        sectionModel.detailTitle = @"";
+//        sectionModel.hasArrow = YES;
+//        [topicHeaderView setSectionModel:sectionModel];
+//        topicHeaderView.delegate = self;
+//        topicHeaderView.rightArrowBtn.tag = 3;
+//        return topicHeaderView;
+//    }
+//    return self.goBackView;
+//}
+
+//- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return [HealthHomeSectionHeaderView getHeaderHeight];
+//}
 
 /*
 // Override to support conditional editing of the table view.

@@ -23,8 +23,17 @@ typedef NS_ENUM(NSUInteger,HttpRequestType) {
     /**
      *  post请求
      */
-    HttpRequestTypePost = 2
+    HttpRequestTypePost = 2,
+    /**
+     *  单张图片post请求上传
+     */
+    HttpRequestTypeImageUploadPost = 3,
+    /**
+     *  多张图片post请求上传
+     */
+    HttpRequestTypeImagesUploadPost = 4
 };
+
 @interface LYYHTTPSManager : NSObject
 singleH(LYYHTTPSManager)
 /**
