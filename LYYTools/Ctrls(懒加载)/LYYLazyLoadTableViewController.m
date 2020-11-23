@@ -7,7 +7,7 @@
 //
 
 #import "LYYLazyLoadTableViewController.h"
-
+#import "NSString+Validate.h"
 @interface LYYLazyLoadTableViewController ()
 @property(nonatomic,strong) NSArray *groups; //在类中声明了一个属性
 @end
@@ -23,8 +23,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *string01 = @"1234567890";
+    NSString *string02 = @"中文中文中";
+    NSString *string03 = @"中文中ying";
+    NSString *string04 = @"中文，。ying";
+    NSString *string05 = @"中文,.ying";
+    NSString *string06 = @"繁體字繁體";
+    NSString *string07 = @"繁體字ying";
     
-    
+    NSInteger int01 = [string01 yyl_GB2312StringLength];
+    NSInteger int02 = [string02 yyl_GB2312StringLength];
+    NSInteger int03 = [string03 yyl_GB2312StringLength];
+    NSInteger int04 = [string04 yyl_GB2312StringLength];
+    NSInteger int05 = [string05 yyl_GB2312StringLength];
+    NSInteger int06 = [string06 yyl_GB2312StringLength];
+    NSInteger int07 = [string07 yyl_GB2312StringLength];
+    NSLog(@"int01=%ld,int02=%ld,int03=%ld,int04=%ld,int05=%ld,int06=%ld,int07=%ld",(long)int01,(long)int02,(long)int03,(long)int04,(long)int05,(long)int06,(long)int07);
 }
 
 - (void)didReceiveMemoryWarning {
