@@ -1,15 +1,16 @@
 //
-//  NSString+YylCategory.m
+//  NSString+Encrypt.m
 //  LYYTools
 //
-//  Created by YangyangLi on 2019/2/20.
-//  Copyright © 2019年 lyy. All rights reserved.
+//  Created by YangyangLi on 2020/11/23.
+//  Copyright © 2020 lyy. All rights reserved.
 //
 
-#import "NSString+YylCategory.h"
+#import "NSString+Encrypt.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation NSString (YylCategory)
+@implementation NSString (Encrypt)
+
 #pragma mark -- *****  MD5加密  *****
 - (NSString *)yyl_md532BitType:(MD532BitType)type{
     switch (type) {
@@ -48,25 +49,6 @@
         default:
             break;
     }
-}
-
-#pragma mark -- *****  正则表达式  *****
-+ (BOOL)yyl_checkTelNumber:(NSString *) telNumber{
-    //手机号以13， 15，18开头，八个 \d 数字字符
-    //    NSString *pattern = @"^1+[3578]+\\d{9}";
-    //    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", pattern];
-    //    BOOL isMatch = [pred evaluateWithObject:telNumber];
-    NSString *phoneRegex =@"^1[3|4|5|6|7|8|9][0-9]{1}[0-9]{8}$";
-    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
-    BOOL isMatch = [phoneTest evaluateWithObject:telNumber];
-    return isMatch;
-}
-
-//邮箱
-+(BOOL)yyl_validateEmail:(NSString *)email{
-    NSString *emailRegex =@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    return [emailTest evaluateWithObject:email];
 }
 
 @end

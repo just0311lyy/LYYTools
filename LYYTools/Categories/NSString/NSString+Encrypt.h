@@ -1,13 +1,14 @@
 //
-//  NSString+YylCategory.h
+//  NSString+Encrypt.h
 //  LYYTools
 //
-//  Created by YangyangLi on 2019/2/20.
-//  Copyright © 2019年 lyy. All rights reserved.
+//  Created by YangyangLi on 2020/11/23.
+//  Copyright © 2020 lyy. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 /**
  *  MD5 32位加密类型
  */
@@ -35,20 +36,16 @@ typedef NS_ENUM(NSUInteger,calculateRowType) {
      */
     calculateRowTypeWidth = 2
 };
-
-@interface NSString (YylCategory)
+@interface NSString (Encrypt)
 
 #pragma mark -- *****  MD5加密  *****
 /**
  *  MD5 32位加密
- *  @param type        加密类型
+ *  @param type        加密类型（大小写）
  *  @return nsstring   加密结果
  */
 - (NSString *)yyl_md532BitType:(MD532BitType)type;
 
-#pragma mark -- *****  正则表达式  *****
-//手机号验证
-+(BOOL)yyl_checkTelNumber:(NSString *) telNumber;
-//邮箱
-+(BOOL)yyl_validateEmail:(NSString *)email;
 @end
+
+NS_ASSUME_NONNULL_END
