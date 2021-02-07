@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		14D5F3668C00AEF687AF8773 /* libPods-LYYTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A630336ACEA554D7651E0E79 /* libPods-LYYTools.a */; };
+		7C62B17625CFDF0800FD7CA8 /* NSDictionary+YylSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C62B17425CFDF0800FD7CA8 /* NSDictionary+YylSafe.m */; };
+		7C62B18225CFDF2E00FD7CA8 /* NSString+Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C62B17F25CFDF2E00FD7CA8 /* NSString+Encrypt.m */; };
+		7C62B18325CFDF2E00FD7CA8 /* NSString+Validate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C62B18125CFDF2E00FD7CA8 /* NSString+Validate.m */; };
 		7D3BBF0F2113255A0040E37F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3BBF0E2113255A0040E37F /* AppDelegate.m */; };
 		7D3BBF122113255A0040E37F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3BBF112113255A0040E37F /* ViewController.m */; };
 		7D3BBF152113255B0040E37F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D3BBF132113255B0040E37F /* Main.storyboard */; };
@@ -25,7 +28,6 @@
 		D728CDEC221CF8F800C0EED0 /* UIColor+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDEB221CF8F800C0EED0 /* UIColor+YylCategory.m */; };
 		D728CDEF221CFACD00C0EED0 /* UILabel+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDEE221CFACD00C0EED0 /* UILabel+YylCategory.m */; };
 		D728CDF2221CFC0500C0EED0 /* UIImage+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDF1221CFC0500C0EED0 /* UIImage+YylCategory.m */; };
-		D728CDF5221CFCB200C0EED0 /* NSString+YylCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */; };
 		D7B0C7292228E88B008EF45C /* YLFileManage.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0C7282228E88B008EF45C /* YLFileManage.m */; };
 		D7B0C72C2228E94C008EF45C /* YLUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0C72B2228E94C008EF45C /* YLUserDefault.m */; };
 		D7B0C72F2228EA6E008EF45C /* YLBaseNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0C72E2228EA6E008EF45C /* YLBaseNetworkManager.m */; };
@@ -58,6 +60,12 @@
 /* Begin PBXFileReference section */
 		51ECE92D26A110D59889E79D /* Pods-LYYTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYYTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYYTools/Pods-LYYTools.debug.xcconfig"; sourceTree = "<group>"; };
 		69097EEECE89EC250A8B8AE9 /* Pods-LYYTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYYTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYYTools/Pods-LYYTools.release.xcconfig"; sourceTree = "<group>"; };
+		7C62B17425CFDF0800FD7CA8 /* NSDictionary+YylSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YylSafe.m"; sourceTree = "<group>"; };
+		7C62B17525CFDF0800FD7CA8 /* NSDictionary+YylSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YylSafe.h"; sourceTree = "<group>"; };
+		7C62B17E25CFDF2E00FD7CA8 /* NSString+Validate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validate.h"; sourceTree = "<group>"; };
+		7C62B17F25CFDF2E00FD7CA8 /* NSString+Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encrypt.m"; sourceTree = "<group>"; };
+		7C62B18025CFDF2E00FD7CA8 /* NSString+Encrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encrypt.h"; sourceTree = "<group>"; };
+		7C62B18125CFDF2E00FD7CA8 /* NSString+Validate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validate.m"; sourceTree = "<group>"; };
 		7D3BBF0A2113255A0040E37F /* LYYTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYYTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3BBF0D2113255A0040E37F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7D3BBF0E2113255A0040E37F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,8 +103,6 @@
 		D728CDEE221CFACD00C0EED0 /* UILabel+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YylCategory.m"; sourceTree = "<group>"; };
 		D728CDF0221CFC0500C0EED0 /* UIImage+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+YylCategory.h"; sourceTree = "<group>"; };
 		D728CDF1221CFC0500C0EED0 /* UIImage+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YylCategory.m"; sourceTree = "<group>"; };
-		D728CDF3221CFCB200C0EED0 /* NSString+YylCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YylCategory.h"; sourceTree = "<group>"; };
-		D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YylCategory.m"; sourceTree = "<group>"; };
 		D76651F3238BDE8D0024FD14 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		D7B0C7272228E88B008EF45C /* YLFileManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLFileManage.h; sourceTree = "<group>"; };
 		D7B0C7282228E88B008EF45C /* YLFileManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLFileManage.m; sourceTree = "<group>"; };
@@ -154,6 +160,26 @@
 				69097EEECE89EC250A8B8AE9 /* Pods-LYYTools.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7C62B17325CFDF0800FD7CA8 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				7C62B17425CFDF0800FD7CA8 /* NSDictionary+YylSafe.m */,
+				7C62B17525CFDF0800FD7CA8 /* NSDictionary+YylSafe.h */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
+		7C62B17D25CFDF2E00FD7CA8 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				7C62B17E25CFDF2E00FD7CA8 /* NSString+Validate.h */,
+				7C62B17F25CFDF2E00FD7CA8 /* NSString+Encrypt.m */,
+				7C62B18025CFDF2E00FD7CA8 /* NSString+Encrypt.h */,
+				7C62B18125CFDF2E00FD7CA8 /* NSString+Validate.m */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		7D3BBF012113255A0040E37F = {
@@ -276,8 +302,8 @@
 		7DF2EA5A2113373600575713 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				D728CDF3221CFCB200C0EED0 /* NSString+YylCategory.h */,
-				D728CDF4221CFCB200C0EED0 /* NSString+YylCategory.m */,
+				7C62B17D25CFDF2E00FD7CA8 /* Strings */,
+				7C62B17325CFDF0800FD7CA8 /* Dictionary */,
 				D728CDF0221CFC0500C0EED0 /* UIImage+YylCategory.h */,
 				D728CDF1221CFC0500C0EED0 /* UIImage+YylCategory.m */,
 				D728CDEA221CF8F800C0EED0 /* UIColor+YylCategory.h */,
@@ -550,8 +576,8 @@
 				D7B549D4221F85AF00D9244D /* UIView+YylCategory.m in Sources */,
 				D728CDEF221CFACD00C0EED0 /* UILabel+YylCategory.m in Sources */,
 				D7FA71742378F5EA00685F62 /* YCPresentationController.m in Sources */,
+				7C62B17625CFDF0800FD7CA8 /* NSDictionary+YylSafe.m in Sources */,
 				D7B549D1221E588900D9244D /* NSDate+YylCategory.m in Sources */,
-				D728CDF5221CFCB200C0EED0 /* NSString+YylCategory.m in Sources */,
 				D7FA71752378F5EA00685F62 /* YCPopoverAnimator.m in Sources */,
 				D7FA71762378F5EA00685F62 /* UIViewController+YCPopover.m in Sources */,
 				7DF2EA64211960EE00575713 /* LYYSingles.m in Sources */,
@@ -560,11 +586,13 @@
 				7D3BBF122113255A0040E37F /* ViewController.m in Sources */,
 				7DF2EA58211336F400575713 /* FSCustomButton.m in Sources */,
 				D728CDF2221CFC0500C0EED0 /* UIImage+YylCategory.m in Sources */,
+				7C62B18325CFDF2E00FD7CA8 /* NSString+Validate.m in Sources */,
 				D7B0C73322291410008EF45C /* YLAlertViewController.m in Sources */,
 				D7CF9F6122D446BF00B24AEE /* YylToast.m in Sources */,
 				7D3BBF1D2113255E0040E37F /* main.m in Sources */,
 				D7B0C72C2228E94C008EF45C /* YLUserDefault.m in Sources */,
 				D728CDEC221CF8F800C0EED0 /* UIColor+YylCategory.m in Sources */,
+				7C62B18225CFDF2E00FD7CA8 /* NSString+Encrypt.m in Sources */,
 				7D3BBF0F2113255A0040E37F /* AppDelegate.m in Sources */,
 				7D5B76052178461000E81EE2 /* LYYBaseViewController.m in Sources */,
 			);
@@ -737,7 +765,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EL4EGHDQTJ;
+				DEVELOPMENT_TEAM = M3FK4FYNRT;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LYYTools/PrefixHeader.pch";
 				INFOPLIST_FILE = LYYTools/Info.plist;
@@ -746,7 +774,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lyy.LYYTools;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cignacmb.ent.hmsapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
@@ -759,7 +787,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EL4EGHDQTJ;
+				DEVELOPMENT_TEAM = M3FK4FYNRT;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LYYTools/PrefixHeader.pch";
 				INFOPLIST_FILE = LYYTools/Info.plist;
@@ -768,7 +796,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lyy.LYYTools;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cignacmb.ent.hmsapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
